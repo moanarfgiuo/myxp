@@ -1,6 +1,6 @@
 FROM node:20-bullseye-slim
 
-RUN apt-get update \
+RUN apt-get update -o Acquire::Check-Valid-Until=false \
     && apt-get install -y --no-install-recommends ca-certificates unzip curl \
     && rm -rf /var/lib/apt/lists/*
 
